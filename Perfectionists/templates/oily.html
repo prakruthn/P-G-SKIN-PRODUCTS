@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="icon" type="image/png" href="/static/2.png">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title> Olay Cream Suggestion</title>
+	</head>
+	
+	<body>
+		<div class="row">
+  			<div class="col-sm-4">
+  				<img class="img-responsive img-rounded" src="/static/1.png" alt="hackerearth" height=100% width=100%>
+			</div>
+  			<div class="col-sm-8 jumbotron text-center">
+  				<h1>P&G</h1>
+  				<p>Touching lives, Improving life</p>
+  				<h2>P&G "Click Predict Innovate"</h2>
+  				<p>Olay Face Cream Suggestion for Individual Skin Type</p>
+  				<p>Team Name: Perfectionists
+  			</div>
+		</div>
+	
+		<div class="alert alert-info">
+  			<strong>Upload Image</strong> Choose your face image and click submit to see Olay Cream suitable for you
+		</div>
+		
+		<div class="row">
+  			<div class="col-sm-4">
+				<form  id="upload-form" action="{{ url_for("upload") }}" method="POST" enctype="multipart/form-data">
+  					<div class="form-group">
+    					<label for="p&g">Upload Another</label>
+	    				<input type="file" class=" btn btn-info" id="p&g" name="file" accept="image/*" multiple>
+	    				<br>
+	    				<input type="submit" name="send" class = "btn btn-success" value="Test Skin">
+  					</div>
+				</form>		
+			</div>
+			<div class="col-sm-4">
+				<div class="page-header">
+  					<h1>Skin Type:</h1> <h3>Oily Skin</h3>
+				</div>
+				<img class="img-responsive img-thumbnail" src="/static/{{value}}" alt="image" height=50% width=50%>
+			</div>
+  			<div class="col-sm-4">
+  				<div class="page-header">
+  					<h2>We suggest you</h2>
+  				</div>
+						
+				<div class="alert alert-success">				
+  					<ul>
+	    				<li>Olay Clarity Fresh Cleanser Olay Gentle Foaming Face Wash</li>
+    					<li>Olay Total Effects Cream + Serum Duo SPF-15</li>
+    					<li>Olay Moisture Balance Foaming Face Wash</li>
+    				</ul>
+    			</div>
+  			</div>
+		</div>
+	</body>
+</html>
+		
+	
